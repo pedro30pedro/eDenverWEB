@@ -1,96 +1,73 @@
 @extends('layout.layout');
 
 <div class="main-panel">
-
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{asset('js/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="{{asset('js/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{{asset('js/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{{asset('js/plugins/jqvmap/jqvmap.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('js/dist/css/adminlte.min.css')}}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{{asset('js/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{{asset('js/plugins/daterangepicker/daterangepicker.css')}}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{{asset('public/js/plugins/summernote/summernote-bs4.css')}}">
+  <!-- Google Font: Source Sans Pro -->
+  <link asset="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- BARRA LATERAL -->
-    <div class="sidebar" style="right: 0;" data-color="purple">
-        <div class="logo"><a href="#" class="simple-text logo-normal">
-                Unidade São José
-            </a></div>
-        <div class="sidebar-wrapper ">
-            <ul class="nav">
-                <li class="nav-item active ">
-                    <a class="nav-link" href="{{route('inicio')}}">
-                        <i class="material-icons">home_work</i>
-                        <p>Início</p>
-                    </a>
-                </li>
-                <li class="nav-item  ">
-                    <a class="nav-link" href="{{route('paciente')}}">
-                        <i class="material-icons">person
-                        </i>
-                        <p>Paciente</p>
-                    </a>
-                </li>
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        <i class="material-icons">content_paste</i>
-                        Exames
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{route('cadastroExame')}}">Novo Exame</a>
-                        <a class="dropdown-item" href="{{route('buscarExame')}}">Buscar Exames </a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        <i class="material-icons">insert_emoticon</i>
-                        Consultas
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Nova Consulta</a>
-                        <a class="dropdown-item" href="#">Buscar Consulta </a>
-                    </div>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('cadastroVacina')}}">
-                        <i class="material-icons">format_color_reset
-                        </i>
-                        <p>Vacinas</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('encaminhamento')}}">
-                        <i class="material-icons">arrow_right_alt
-                        </i>
-                        <p>Encaminhamentos</p>
-                    </a>
-                </li>
-                <li class="nav-item  ">
-                    <a class="nav-link" href="{{asset('recados')}}">
-                        <i class="material-icons">attach_file
-                        </i>
-                        <p>Recados</p>
-                    </a>
-                </li>
-
-                <li class="nav-item  ">
-                    <a class="nav-link" href="#">
-                        <i class="material-icons">history
-                        </i>
-                        <p>Histórico dos Pacientes</p>
-                    </a>
-                </li>
-                <li class="nav-item  ">
-                    <a class="nav-link" href="#">
-                        <i class="material-icons">commute
-                        </i>
-                        <p>Gerenciamento de Viagens</p>
-                    </a>
-                </li>
-                <li class="nav-item  ">
-                    <a class="nav-link" href="#">
-                        <i class="material-icons">date_range
-                        </i>
-                        <p>Agendamento Odontológico</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <div class="sidebar" style="right: 0;" data-color="green" >
+    <div class="logo"><a href="#" class="simple-text logo-normal">
+            UPA Vila CArli
+        </a></div>
+    <div class="sidebar-wrapper ">
+        <ul class="nav">
+            <li class="nav-item active ">
+                <a class="nav-link" href="{{route('inicio')}}">
+                    <i class="material-icons">home_work</i>
+                    <p>Início</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{route('paciente')}}">
+                    <i class="material-icons">person
+                    </i>
+                    <p>Paciente</p>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">content_paste</i>
+                    Agente Comunitário
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{route('cadastroExame')}}">Validar Agente</a>
+                    <a class="dropdown-item" href="{{route('buscarExame')}}">Buscar Agente </a>
+                </div>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{asset('recados')}}">
+                    <i class="material-icons">attach_file
+                    </i>
+                    <p>Recados</p>
+                </a>
+            </li>
+            <li class="nav-item  ">
+                <a class="nav-link" href="{{route('encaminhamento')}}">
+                    <i class="material-icons">date_range
+                    </i>
+                    <p>Agendamentos</p>
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
 <!-- Navbar -->
@@ -142,7 +119,71 @@
 
 
     <h1 align="center">Bem Vindo</h1>
+    <section class="content">
+      <div class="container-fluid">
+    <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>150</h3>
 
+                <p>Agentes Comunitários</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>53<sup style="font-size: 20px"></sup></h3>
+
+                <p>Crianças</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-happy"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner" >
+                <h3 style="color: white">44</h3>
+
+                <p style="color: white  ">Testes Realizados</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer" style="color: white">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>65%</h3>
+
+                <p>Aprovação dos testes</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer" >More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
 
 
 

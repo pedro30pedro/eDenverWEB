@@ -1,9 +1,9 @@
 @extends('layout.layout');
 
 
-<div class="sidebar" style="right: 0;" data-color="purple">
+<div class="sidebar" style="right: 0;" data-color="green" >
     <div class="logo"><a href="#" class="simple-text logo-normal">
-            Unidade São José
+            UPA Vila CArli
         </a></div>
     <div class="sidebar-wrapper ">
         <ul class="nav">
@@ -20,77 +20,35 @@
                     <p>Paciente</p>
                 </a>
             </li>
-            <li class="nav-item dropdown ">
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     <i class="material-icons">content_paste</i>
-                    Exames
+                    Agente Comunitário
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{route('cadastroExame')}}">Novo Exame</a>
-                    <a class="dropdown-item" href="{{route('buscarExame')}}">Buscar Exames </a>
-                </div>
-            </li>
-            <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                   data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    <i class="material-icons">insert_emoticon</i>
-                    Consultas
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Nova Consulta</a>
-                    <a class="dropdown-item" href="#">Buscar Consulta </a>
+                    <a class="dropdown-item" href="{{route('cadastroExame')}}">Validar Agente</a>
+                    <a class="dropdown-item" href="{{route('buscarExame')}}">Buscar Agente </a>
                 </div>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="{{route('cadastroVacina')}}">
-                    <i class="material-icons">format_color_reset
-                    </i>
-                    <p>Vacinas</p>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{{route('encaminhamento')}}">
-                    <i class="material-icons">arrow_right_alt
-                    </i>
-                    <p>Encaminhamentos</p>
-                </a>
-            </li>
-            <li class="nav-item  ">
                 <a class="nav-link" href="{{asset('recados')}}">
                     <i class="material-icons">attach_file
                     </i>
                     <p>Recados</p>
                 </a>
             </li>
-
-            <li class="nav-item  ">
-                <a class="nav-link" href="./paciente.html">
-                    <i class="material-icons">history
-                    </i>
-                    <p>Histórico dos Pacientes</p>
-                </a>
-            </li>
-            <li class="nav-item  ">
-                <a class="nav-link" href="./paciente.html">
-                    <i class="material-icons">commute
-                    </i>
-                    <p>Gerenciamento de Viagens</p>
-                </a>
-            </li>
-            <li class="nav-item  ">
-                <a class="nav-link" href="./paciente.html">
+            <li class="nav-item active ">
+                <a class="nav-link" href="{{route('encaminhamento')}}">
                     <i class="material-icons">date_range
                     </i>
-                    <p>Agendamento Odontológico</p>
+                    <p>Agendamentos</p>
                 </a>
             </li>
         </ul>
     </div>
 </div>
-
 
 <div class="main-panel">
         <!-- Navbar -->
@@ -98,7 +56,7 @@
             <div class="container-fluid">
 
                 <div class="navbar-wrapper">
-                    <a class="navbar-brand" href="javascript:;">Gestão de Encaminhamentos</a>
+                    <a class="navbar-brand" href="javascript:;">Gestão de Agendamentos</a>
                 </div>
 
                 <!-- BOTAO DE RESPONSIVIDADE PARA OPCIOES DE SIDEBAR-->
@@ -151,7 +109,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">Ficha de Encaminhamento</h4>
+                                <h4 class="card-title">Ficha de Agendamento</h4>
                             </div>
                             <div class="card-body">
                                 <form>
@@ -169,19 +127,7 @@
                                                 <input type="text" class="form-control">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Especialidade de Encaminhamento</label>
-                                                <select class="form-control" name="" id="">
-                                                    <option value="1" selected>Fisioterapia</option>
-                                                    <option value="2">Neurologista</option>
-                                                    <option value="3">Ginecologista</option>
-                                                    <option value="4">Ortopedista</option>
-                                                    <option value="5">Outro</option>
-                                                </select>
-
-                                            </div>
-                                        </div>
+                                        
                                     </div>
 
                                     <div class="row">

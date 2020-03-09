@@ -1,8 +1,17 @@
 @extends('layout.layout');
-
-<div class="sidebar" style="right: 0;" data-color="purple">
+<script type="text/javascript">
+function formatar_mascara(src, mascara) {
+ var campo = src.value.length;
+ var saida = mascara.substring(0,1);
+ var texto = mascara.substring(campo);
+ if(texto.substring(0,1) != saida) {
+ src.value += texto.substring(0,1);
+ }
+}
+</script>
+<div class="sidebar" style="right: 0;" data-color="green" >
     <div class="logo"><a href="#" class="simple-text logo-normal">
-            Unidade São José
+            UPA Vila CArli
         </a></div>
     <div class="sidebar-wrapper ">
         <ul class="nav">
@@ -24,38 +33,12 @@
                    data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     <i class="material-icons">content_paste</i>
-                    Exames
+                    Agente Comunitário
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{route('cadastroExame')}}">Novo Exame</a>
-                    <a class="dropdown-item" href="{{route('buscarExame')}}">Buscar Exames </a>
+                    <a class="dropdown-item" href="{{route('cadastroExame')}}">Validar Agente</a>
+                    <a class="dropdown-item" href="{{route('buscarExame')}}">Buscar Agente </a>
                 </div>
-            </li>
-            <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                   data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    <i class="material-icons">insert_emoticon</i>
-                    Consultas
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Nova Consulta</a>
-                    <a class="dropdown-item" href="#">Buscar Consulta </a>
-                </div>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="{{route('cadastroVacina')}}">
-                    <i class="material-icons">format_color_reset
-                    </i>
-                    <p>Vacinas</p>
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="{{route('encaminhamento')}}">
-                    <i class="material-icons">arrow_right_alt
-                    </i>
-                    <p>Encaminhamentos</p>
-                </a>
             </li>
             <li class="nav-item  ">
                 <a class="nav-link" href="{{asset('recados')}}">
@@ -64,26 +47,11 @@
                     <p>Recados</p>
                 </a>
             </li>
-
             <li class="nav-item  ">
-                <a class="nav-link" href="./paciente.html">
-                    <i class="material-icons">history
-                    </i>
-                    <p>Histórico dos Pacientes</p>
-                </a>
-            </li>
-            <li class="nav-item  ">
-                <a class="nav-link" href="./paciente.html">
-                    <i class="material-icons">commute
-                    </i>
-                    <p>Gerenciamento de Viagens</p>
-                </a>
-            </li>
-            <li class="nav-item  ">
-                <a class="nav-link" href="./paciente.html">
+                <a class="nav-link" href="{{route('encaminhamento')}}">
                     <i class="material-icons">date_range
                     </i>
-                    <p>Agendamento Odontológico</p>
+                    <p>Agendamentos</p>
                 </a>
             </li>
         </ul>
@@ -96,7 +64,7 @@
             <div class="container-fluid">
 
                 <div class="navbar-wrapper">
-                    <a class="navbar-brand" href="javascript:;">Gestão de Encaminhamentos</a>
+                    <a class="navbar-brand" href="javascript:;">Gestão de Pacientes</a>
                 </div>
 
                 <!-- BOTAO DE RESPONSIVIDADE PARA OPCIOES DE SIDEBAR-->
@@ -155,7 +123,7 @@
                   <form class="navbar-form">
                     <div class="input-group no-border">
                       <input type="text" style="color:beige;" value="" class="form-control"
-                        placeholder="Digite o nome do paciente...">
+                        placeholder="Digite o CPF do paciente..." onkeypress="formatar_mascara(this,'###.###.###-##')" maxlength="14">
                       <button type="submit" class="btn btn-white btn-round btn-just-icon">
                         <i class="material-icons">search</i>
                         <div class="ripple-container"></div>
@@ -171,19 +139,16 @@
                     <table class="table">
                       <thead class=" text-primary">
                         <th>
-                          ID
-                        </th>
-                        <th>
                           Nome
                         </th>
                         <th>
-                          Cidade
+                        CPF
                         </th>
                         <th>
                           Localidade
                         </th>
                         <th>
-                          Num. SUS
+                        Bairro
                         </th>
                         <th>
 
@@ -192,25 +157,22 @@
                       <tbody>
                         <tr>
                           <td>
-                            1
+                            Pedro Consulo Mendes
                           </td>
                           <td>
-                            Mark
+                          430.012.236-01
                           </td>
                           <td>
-                            Santa MAria do Oeste
-                          </td>
-                          <td>
-                            São José
+                            Guarapuava
                           </td>
                           <td class="text-primary">
-                            432442424324
+                          Dos estados
                           </td>
                           <td>
                             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                               <label class="btn btn-secondary ">
-                                <i class="material-icons">delete</i>
-                                <input type="radio" name="options" id="option1"> Apagar
+                                <i class="material-icons">remove_red_eye</i>
+                                <input type="radio" name="options" id="option1"> Visualizar
                               </label>
                               <label class="btn btn-secondary">
                                 <i class="material-icons">create</i>
@@ -228,106 +190,9 @@
               </div>
             </div>
 
-            <!-- CADASTRO DE PACIENTE -->
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title">Cadastro de paciente</h4>
-                </div>
-                <div class="card-body">
-                  <form>
-                    <p class="card-category">Dados Pessoais</p>
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Company (disabled)</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Username</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Email address</label>
-                          <input type="email" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Fist Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Last Name</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
+            
 
-                    <p class="card-category">Informações de Endereço</p>
-
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">City</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Country</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Postal Code</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-
-                    <p class="card-category">Demais informações</p>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Adress</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary pull-right">Salvar</button>
-                    <div class="clearfix"></div>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <!-- MOSTRAGEM COM IMAGEM EM CIMA -->
-            <div class="col-md-4">
-              <div class="card card-profile">
-                <div class="card-avatar">
-                  <a href="javascript:;">
-                    <h1>?</h1>
-                    <!-- <img class="img" src="../assets/img/faces/interrogacao.png" /> -->
-                  </a>
-                </div>
-                <div class="card-body">
-                  <p class="card-description">
-                    Aqui explicar a importancia do cadastro do cliente dentro do sistema.
-                  </p>
-                </div>
-              </div>
-            </div>
+          
 
 
           </div>

@@ -1,95 +1,54 @@
 @extends('layout.layout');
 
 <!-- data-image="{{asset('img/unidade.jpg')}} -->
-    <div class="sidebar" style="right: 0;" data-color="purple" >
-        <div class="logo"><a href="#" class="simple-text logo-normal">
-                Unidade São José
-            </a></div>
-        <div class="sidebar-wrapper ">
-            <ul class="nav">
-                <li class="nav-item  ">
-                    <a class="nav-link" href="{{route('inicio')}}">
-                        <i class="material-icons">home_work</i>
-                        <p>Início</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('paciente')}}">
-                        <i class="material-icons">person
-                        </i>
-                        <p>Paciente</p>
-                    </a>
-                </li>
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        <i class="material-icons">content_paste</i>
-                        Exames
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{route('cadastroExame')}}">Novo Exame</a>
-                        <a class="dropdown-item" href="{{route('buscarExame')}}">Buscar Exames </a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        <i class="material-icons">insert_emoticon</i>
-                        Consultas
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Nova Consulta</a>
-                        <a class="dropdown-item" href="#">Buscar Consulta </a>
-                    </div>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('cadastroVacina')}}">
-                        <i class="material-icons">format_color_reset
-                        </i>
-                        <p>Vacinas</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('encaminhamento')}}">
-                        <i class="material-icons">arrow_right_alt
-                        </i>
-                        <p>Encaminhamentos</p>
-                    </a>
-                </li>
-                <li class="nav-item  ">
-                    <a class="nav-link" href="{{asset('recados')}}">
-                        <i class="material-icons">attach_file
-                        </i>
-                        <p>Recados</p>
-                    </a>
-                </li>
-
-                <li class="nav-item  ">
-                    <a class="nav-link" href="./paciente.html">
-                        <i class="material-icons">history
-                        </i>
-                        <p>Histórico dos Pacientes</p>
-                    </a>
-                </li>
-                <li class="nav-item  ">
-                    <a class="nav-link" href="./paciente.html">
-                        <i class="material-icons">commute
-                        </i>
-                        <p>Gerenciamento de Viagens</p>
-                    </a>
-                </li>
-                <li class="nav-item  ">
-                    <a class="nav-link" href="./paciente.html">
-                        <i class="material-icons">date_range
-                        </i>
-                        <p>Agendamento Odontológico</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
+<div class="sidebar" style="right: 0;" data-color="green" >
+    <div class="logo"><a href="#" class="simple-text logo-normal">
+            UPA Vila CArli
+        </a></div>
+    <div class="sidebar-wrapper ">
+        <ul class="nav">
+            <li class="nav-item  ">
+                <a class="nav-link" href="{{route('inicio')}}">
+                    <i class="material-icons">home_work</i>
+                    <p>Início</p>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{route('paciente')}}">
+                    <i class="material-icons">person
+                    </i>
+                    <p>Paciente</p>
+                </a>
+            </li>
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">content_paste</i>
+                    Agente Comunitário
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{route('cadastroExame')}}">Validar Agente</a>
+                    <a class="dropdown-item" href="{{route('buscarExame')}}">Buscar Agente </a>
+                </div>
+            </li>
+            <li class="nav-item  ">
+                <a class="nav-link" href="{{asset('recados')}}">
+                    <i class="material-icons">attach_file
+                    </i>
+                    <p>Recados</p>
+                </a>
+            </li>
+            <li class="nav-item  ">
+                <a class="nav-link" href="{{route('encaminhamento')}}">
+                    <i class="material-icons">date_range
+                    </i>
+                    <p>Agendamentos</p>
+                </a>
+            </li>
+        </ul>
     </div>
+</div>
 <!-- NAV BAR --> 
 <div class="main-panel">
         <!-- INICIO NAVBAR -->
@@ -97,7 +56,7 @@
             <div class="container-fluid">
 
                 <div class="navbar-wrapper">
-                    <a class="navbar-brand" href="javascript:;">Gerenciamento de Exames</a>
+                    <a class="navbar-brand" href="javascript:;">Gerenciamento de Agente Comunitário de saúde</a>
                 </div>
 
                 <!-- BOTAO DE RESPONSIVIDADE PARA OPCIOES DE SIDEBAR-->
@@ -150,7 +109,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">Pesquisa de Exame</h4>
+                                <h4 class="card-title">Pesquisa de Agentes Comunitários</h4>
                                 <form class="navbar-form">
                                     <div class="input-group no-border">
                                         <input type="text" style="color:beige;" value="" class="form-control"
@@ -163,18 +122,7 @@
                                 </form>
 
                                 <!-- FORM PARA SELECAO DOS EXAMES REALIZADOS PARA PESQUISA -->
-                                <form action="">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline1" name="customRadioInline1"
-                                               class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline1">Exame 1</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline2" name="customRadioInline2"
-                                               class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline2">Exame 2</label>
-                                    </div>
-                                </form>
+                                
                             </div>
 
                             <!-- MIOLO DE TABELA PARA MEXER -->
@@ -189,16 +137,16 @@
                                             Nome
                                         </th>
                                         <th>
-                                            Localidade
+                                            CPF
                                         </th>
                                         <th>
-                                            Exame Realizado
+                                            Celular
                                         </th>
                                         <th>
-                                            Procedimento
+                                            E-mail
                                         </th>
                                         <th>
-                                            Finalização
+                                            Status
                                         </th>
                                         </thead>
                                         <tbody>
@@ -207,19 +155,19 @@
                                                 1
                                             </td>
                                             <td>
-                                                Ford
+                                                Joice Casagrande
                                             </td>
                                             <td>
-                                                Vila Verde
+                                                430.120.354-01
                                             </td>
                                             <td>
-                                                Colesterol
+                                                (42) 98722-3654
                                             </td>
                                             <td>
-                                                Realizado em outra localidade
+                                                joice@gmail.com
                                             </td>
                                             <td class="text-primary">
-                                                Normal
+                                                Ativo
                                             </td>
 
                                         </tr>
