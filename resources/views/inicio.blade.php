@@ -126,7 +126,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{$countUser}}</h3>
 
                 <p>Agentes Comunitários</p>
               </div>
@@ -141,7 +141,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px"></sup></h3>
+                <h3>{{$kidCount}}<sup style="font-size: 20px"></sup></h3>
 
                 <p>Crianças</p>
               </div>
@@ -156,7 +156,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner" >
-                <h3 style="color: white">44</h3>
+                <h3 style="color: white">{{$kidtestCount}}</h3>
 
                 <p style="color: white  ">Testes Realizados</p>
               </div>

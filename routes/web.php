@@ -21,9 +21,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/paciente', function () {
-    return view('paciente');
-})->name('paciente');
+Route::get('/paciente', 'PacienteController@index')->name('paciente');
+Route::get('/paciente/search', 'PacienteController@search')->name('search.paciente');
+
+Route::get('/comunicacao/buscar/{search}','ComunicacaoController@kidTestSearch')->name('comunicacao.search');
 
 Route::get('/buscarExame', function () {
     return view('buscarExame');
@@ -49,6 +50,4 @@ Route::get('/comunicacao', function () {
     return view('comunicacao');
 })->name('comunicacao');
 
-Route::get('/inicio', function () {
-    return view('inicio');
-})->name('inicio');
+Route::get('/inicio', 'InicioController@index')->name('inicio');
